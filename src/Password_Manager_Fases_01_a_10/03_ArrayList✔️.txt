@@ -1,0 +1,43 @@
+FASE 3 — GUARDAR VÁRIAS PASSWORDS
+==================================
+
+Objetivo:
+Utilizar ArrayList para armazenar várias Passwords.
+
+ESTRUTURA
+
+ArrayList<Password>
+
+CHECKLIST
+
+- [✔️] Criar um ArrayList de Password.
+- [✔️] Adicionar uma Password.
+- [✔️] Adicionar várias Passwords.
+- [✔️] Obter uma Password pelo índice.
+- [✔️] Percorrer a lista com for.
+- [✔️] Percorrer a lista com for-each.
+- [✔️] Verificar o tamanho com size().
+- [✔️] Remover uma Password.
+- [✔️] Procurar uma Password pelo ID.
+
+MÉTODOS QUE DEVES CONHECER
+
+- add()
+- get()
+- set()
+- remove()
+- size()
+- isEmpty()
+
+PRÁTICA
+
+- [✔️] Criar 5 Passwords.
+- [✔️] Adicionar as 5 ao ArrayList.
+- [✔️] Listar todas.
+- [✔️] Remover uma.
+- [✔️] Mostrar novamente a lista.
+- [✔️] Criar um método buscarPorId(int id).
+
+CONCLUÍDO QUANDO:
+
+- [✔️] Consigo adicionar, procurar e remover objetos do ArrayList.

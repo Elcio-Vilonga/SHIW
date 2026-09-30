@@ -1,0 +1,86 @@
+UML de Classes (primeira versão)
+
++----------------------+
+|      Utilizador      |
++----------------------+
+| id                   |
+| username             |
+| passwordHash         |
++----------------------+
+| autenticar()         |
+| alterarSenha()       |
++----------------------+
+
+             1
+             |
+             |
+             *
++----------------------+
+|       Pacote         |
++----------------------+
+| id                   |
+| nome                 |
+| descricao            |
++----------------------+
+| criar()              |
+| editar()             |
+| remover()            |
+| listar()             |
++----------------------+
+
+             1
+             |
+             |
+             *
++----------------------+
+|       Senha          |
++----------------------+
+| id                   |
+| titulo               |
+| username             |
+| password             |
+| url                  |
+| observacoes          |
++----------------------+
+| copiar()             |
+| criptografar()       |
+| descriptografar()    |
++----------------------+
+
++----------------------+
+|      Exportador      |
++----------------------+
+| exportarTXT()        |
+| autenticar2FA()      |
++----------------------+
+
++----------------------+
+| Criptografia         |
++----------------------+
+| criptografarBD()     |
+| descriptografarBD()  |
++----------------------+
+
+
+Organização da arquitetura
+
+Utilizador
+      │
+      ▼
+Menu Principal
+      │
+ ┌── Listar Pack
+ │      └── Abrir
+ │            ├── Editar
+ │            ├── Remover
+ │            └── Copiar
+ │
+ ├── Registrar
+ │
+ ├── Exportar
+ │      └── Senha 1
+ │            └── Senha 2
+ │                 └── Arquivo TXT
+ │
+ └── Trancar/Sair
+        └── Criptografar Base de Dados

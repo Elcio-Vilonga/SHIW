@@ -1,0 +1,40 @@
+FASE 1 — FUNDAMENTOS JAVA
+==========================
+
+Objetivo:
+Reforçar os fundamentos necessários para começar o mini-projeto Password Manager.
+
+CHECKLIST
+
+- [✔️] String
+- [✔️] int, double, boolean
+- [✔️] if / else
+- [✔️] switch
+- [✔️] for
+- [✔️] while
+- [✔️] do while
+- [✔️] Arrays
+- [✔️] ArrayList
+- [✔️] Métodos
+- [✔️] Parâmetros
+- [✔️] Retorno de métodos
+- [✔️] Classes
+- [✔️] Objetos
+- [✔️] Construtores
+- [✔️] private
+- [✔️] Getters e setters
+- [✔️] Scanner
+
+PRÁTICA
+
+- [✔️] Criar um programa que leia o nome do utilizador.
+- [✔️] Criar um programa que faça operações matemáticas.
+- [✔️] Criar um menu simples usando switch.
+- [✔️] Criar um loop que continue até o utilizador escolher "sair".
+- [✔️] Criar um método que receba dois números e devolva o maior.
+- [✔️] Criar um pequeno programa usando ArrayList.
+
+CONCLUÍDO QUANDO:
+
+[✔️] Consigo criar pequenos programas sem copiar código pronto.
+[✔️] Consigo explicar para que serve cada recurso acima.

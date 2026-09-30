@@ -1,0 +1,42 @@
+FASE 4 — MENU PRINCIPAL
+=======================
+
+Objetivo:
+Transformar o programa em uma aplicação interativa.
+
+MENU
+
+================================
+       PASSWORD MANAGER
+================================
+
+1 - Registrar
+2 - Listar
+3 - Abrir
+4 - Editar
+5 - Remover
+0 - Sair
+
+CHECKLIST
+
+- [✔️ ] Criar Scanner.
+- [✔️ ] Criar loop principal.
+- [✔️ ] Criar switch.
+- [✔️ ] Implementar opção Registrar.
+- [✔️ ] Implementar opção Listar.
+- [✔️ ] Implementar opção Abrir.
+- [✔️ ] Implementar opção Editar.
+- [✔️ ] Implementar opção Remover.
+- [✔️ ] Implementar opção Sair.
+- [✔️ ] Mostrar mensagem quando a opção for inválida.
+
+DICA
+
+O menu deve continuar aparecendo até o utilizador escolher 0.
+
+CONCLUÍDO QUANDO:
+
+[✔️ ] O programa inicia.
+[✔️ ] O menu aparece.
+[✔️ ] As opções são reconhecidas.
+[✔️ ] O programa só termina quando escolher 0.

@@ -1,0 +1,39 @@
+Fluxograma Geral
+
+                      INÍCIO
+                         │
+                         ▼
+                  Introduzir Login
+                         │
+                Credenciais válidas?
+                   ┌─────┴─────┐
+                   │           │
+                  Não         Sim
+                   │           │
+                   ▼           ▼
+           Mostrar erro   Menu Principal
+                               │
+    ┌──────────────────────────┼─────────────────────┬─────────────────────┐
+    │                          │                     │                     │
+     ▼                         ▼                     ▼                     ▼
+ Listar Pack               Registrar             Exportar           Trancar / Sair?
+     │                         │                     │                     │
+     ▼                         ▼             Autenticação          ┌───────┴────────┐
+ Abrir Pacote            Guardar Dados        Senha1 válida?       │                │
+     │                         │                     │            Não              Sim
+     ▼                         ▼                ┌────┴────┐        │                │
+Editar/Remover/Copiar     Voltar ao Menu        │         │        └───────┬────────┘
+     │                                         Não       Sim               ▼
+     ▼                                          │         │     Criptografar Base de Dados
+Voltar ao Menu                             Cancelar    Senha2              │
+                                                          │                ▼
+                                                  Senha2 válida?          FIM
+                                                     ┌────┴────┐
+                                                     │         │
+                                                    Não       Sim
+                                                     │         │
+                                                  Cancelar   Criar TXT
+                                                               │
+                                                               ▼
+                                                          Voltar ao Menu
+                                                  

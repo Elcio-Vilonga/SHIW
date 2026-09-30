@@ -1,0 +1,52 @@
+Diagrama UML de Casos de Uso
+
+
+
+                      +------------------------------------+
+
+                      | Plataforma de Gestão de Senhas     |
+
+                      +------------------------------------+
+
+
+
+                 +--------------------------------------+
+
+                 |               Utilizador             |
+
+                 +--------------------------------------+
+
+                           |
+
+        -----------------------------------------------------
+
+        |        |        |        |        |        |      |
+
+      Login   Listar   Abrir   Registrar Exportar Trancar Logout
+
+                 |        |          |          |
+
+                 |        |          |          |
+
+                 |     --------      |     Autenticação
+
+                 |     |      |      |      2 Fatores
+
+                 |   Editar Remover  |
+
+                 |        |
+
+                 |      Copiar
+
+
+
+Relações
+
+* Login → Menu Principal
+* Abrir <<include>> Listar\_pack
+* Editar <<extend>> Abrir
+* Remover <<extend>> Abrir
+* Copiar <<extend>> Abrir
+* Exportar <<include>> Autenticação em dois fatores
+* Trancar → Criptografa BD
+

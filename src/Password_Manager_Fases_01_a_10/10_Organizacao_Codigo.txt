@@ -1,0 +1,80 @@
+FASE 10 — ORGANIZAÇÃO DO CÓDIGO
+===============================
+
+Objetivo:
+Separar responsabilidades e deixar o projeto mais organizado.
+
+ESTRUTURA SUGERIDA
+
+src/
+└── main/
+    └── java/
+        ├── Main.java
+        ├── Password.java
+        └── PasswordManager.java
+
+RESPONSABILIDADES
+
+Main.java
+
+- Iniciar o programa.
+- Controlar o menu.
+- Ler as opções do utilizador.
+
+Password.java
+
+- Representar uma Password.
+- Guardar os seus dados.
+- Getters/setters.
+- toString().
+
+PasswordManager.java
+
+- Registrar.
+- Listar.
+- Buscar.
+- Editar.
+- Remover.
+
+CHECKLIST
+
+- [ ] Criar Password.java.
+- [ ] Criar PasswordManager.java.
+- [ ] Mover a lista para PasswordManager.
+- [ ] Criar método registrar().
+- [ ] Criar método listar().
+- [ ] Criar método buscarPorId().
+- [ ] Criar método editar().
+- [ ] Criar método remover().
+- [ ] Deixar Main responsável principalmente pelo fluxo/menu.
+- [ ] Testar todas as funcionalidades depois da reorganização.
+
+DESAFIO
+
+Tenta conseguir uma estrutura semelhante:
+
+Main
+ |
+ +-- PasswordManager
+       |
+       +-- ArrayList<Password>
+       |
+       +-- registrar()
+       +-- listar()
+       +-- buscarPorId()
+       +-- editar()
+       +-- remover()
+
+CONCLUÍDO QUANDO:
+
+[ ] O programa continua funcionando depois da organização.
+[ ] Cada classe tem uma responsabilidade clara.
+[ ] Main.java não contém toda a lógica do projeto.
+
+PRÓXIMA ETAPA
+
+Depois destas 10 fases, o próximo desafio será:
+
+FASE 11 — Persistência em arquivos
+
+Objetivo: fazer as Passwords continuarem existindo depois de fechar o programa.
