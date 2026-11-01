@@ -1,4 +1,6 @@
 package co.protops.elvilon;
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,8 +33,9 @@ public class App {
                 case 1:
                     System.out.println("= 1 -   Registrar    =");
                     senhas.add(registrar());
+//                    ??melhorar essa parte: se apgr um objt e criar um nv, os 2 ultm terao o msm id
                     int last_item = senhas.size() - 1;
-                    senhas.get(last_item).setId(last_item); // incrementa um ip na senha criada
+                    senhas.get(last_item).setId(last_item); // incrementa um id na senha criada
                     System.out.println("Password registrada com sucesso!");
                     break;
                 case 2:
@@ -52,14 +55,13 @@ public class App {
                     break;
                 case 5:
                     System.out.println("= 5 -   Remover      =");
-                    if (senhas.isEmpty()) {
-                        System.out.println("Nenhuma password registrada.");
-                        break;
-                    }
-                    id = buscarPorId(senhas);
-                    if (id <= 0 && id >= senhas.size() - 1)
-                        break;
-                    senhas.remove(id);
+//                    id = buscarPorId(senhas);
+//                    if (id < 0) {
+//                        System.out.println("Id INVALID");
+//                        break;
+//                    }
+//                    senhas.remove(id);
+                    remover(senhas);
                     System.out.println("Senha removida com sucesso!");
                     break;
                 case 0: System.out.println("Encerrando o programa..."); break;
@@ -76,27 +78,43 @@ public class App {
 
         return false;
     }
+//    ??este metodo deveria ser buscarId()
+    public static int buscarPorId(List<Password> senhas, int id) {
+        if (senhas.isEmpty()) { System.out.println("Nenhuma password registrada."); return -1;}
 
-    public static int buscarPorId(List<Password> senhas) {
-        Scanner input = new Scanner(System.in);
-        int id;
-//        if (senhas.isEmpty()) { System.out.println("Nenhuma password registrada."); return -1;}
-        System.out.print("Seleciona o id: ");
-        id = input.nextInt();
-//        if (id >= 0 && id <= senhas.size() - 1) return id;
-        for (Password senha : senhas) {
-            if (id == senha.getId())
-                return id;
+//        ??implementar validador
+        if (id >= 0) {
+//            ?? como o id pode ser diferente do indice do objecto no array,
+//                entao ele percorre os objectos para encontrar o id
+            for (Password senha : senhas) {
+                if (id == senha.getId())
+                    return senhas.indexOf(senha); // o id recebe a posicao
+            }
         }
-//        if (id >= 0 && id <= senhas.size() - 1) {
-//            for (Password senha : senhas) {
-//                if (id == senha.getId())
-//                    id = senhas.indexOf(senha); // o id recebe a posicao
-//            }
         return -1;
     }
+    public static int buscarPorId(List<Password> senhas) {
+        Scanner input = new Scanner(System.in);
+
+        if (senhas.isEmpty()) { System.out.println("Nenhuma password registrada."); return -1;}
+        System.out.print("Seleciona o id: ");
+        int id = input.nextInt();
+//        if (id >= 0 && id <= senhas.size() - 1) return id;
+//        for (Password senha : senhas) {
+//            if (id == senha.getId())
+//                return id;
+//        }
+        if (id >= 0) {
+            for (Password senha : senhas) {
+                if (id == senha.getId())
+                    return senhas.indexOf(senha); // o id recebe a posicao
+            }
+        }
+        return -1;
+    }
+
 // ⚠⚠⚠⚠⚠⚠️ vai gerar as senha simplismente, e a senha serah colocada na lista no main,
-// recebendo lah mesmo (no main) o id
+// o id recebe lah mesmo (no main)
     public static Password registrar() {
         Scanner input = new Scanner(System.in);
 //                    int id = count;
@@ -140,7 +158,8 @@ public class App {
                 if (opt.equals("*"))
                     break;
                 op = Integer.parseInt(opt);
-                abrir(senhas, op);
+                int id = buscarPorId(senhas, op);
+                abrir(senhas, id);
             } while (op != 0);
         }
     }
@@ -149,60 +168,58 @@ public class App {
         PrintBeauty formato = new PrintBeauty();
         Scanner input = new Scanner(System.in);
         int op = 0;
-        // exibe detalhes da password se id for valido
-        if (id >= 0 && id <= senhas.size() - 1) {
-//            ?? como o id pode ser diferente do indice do objecto no array,
-//                entao ele percorre os objectos para encontrar o id
-            for (Password senha : senhas) {
-                if (id == senha.getId())
-                    id = senhas.indexOf(senha);
-            }
+
+//        id = buscarPorId(senhas, id);
+        if (id >= 0) {
+            // exibe detalhes da password se id for valido
             formato.format(senhas.get(id).getTitle(),"#");
             System.out.println("Username: " +senhas.get(id).getUsername());
             System.out.println("Password: " +senhas.get(id).getPass()); //tera que colocar um PIN para ver a senha completa
             submenu();
-            do {
-                op = input.nextInt();
-                switch (op) {
-                    case 1: System.out.println("====== Editar ======"); editar(senhas.get(id)); break;
-                    case 2: System.out.println("====== Remover ======"); remover(senhas); break;
-                    case 3: System.out.println("====== Voltar ======"); break;
-                    default: System.out.println("INVALID");
-                }
-                op = 3;
-            } while (op != 3);
+            op = input.nextInt();
+            switch (op) {
+                case 1: System.out.println("====== Editar ======"); editar(senhas.get(id)); break;
+                case 2: System.out.println("====== Remover ======"); remover(senhas, id); break;
+                case 3: System.out.println("====== Voltar ======"); break;
+                default: System.out.println("INVALID");
+            }
         }
-        else {
+        else
             System.out.println("Password não encontrada.");
-        }
     }
 
-    public static void editar(Password senhas) {
+    public static void editar(Password senha) {
         Scanner input = new Scanner(System.in);
 
 //        String temp = input.nextLine();
-        System.out.println("Nome atual: " +senhas.getTitle());
+        System.out.println("Nome atual: " +senha.getTitle());
         System.out.print("Novo nome: ");
         String new_title = input.nextLine();
-        System.out.println("Username atual: " +senhas.getUsername());
+        System.out.println("Username atual: " +senha.getUsername());
         System.out.print("Novo username: ");
         String new_username = input.nextLine();
-        System.out.println("Password atual: " +senhas.getPass());
+        System.out.println("Password atual: " +senha.getPass());
         System.out.print("Nova password: ");
         String new_password = input.nextLine();
 
-        if (new_title.isEmpty()) new_title = senhas.getTitle();
-        if (new_username.isEmpty()) new_username = senhas.getUsername();
-        if (new_password.isEmpty()) new_password = senhas.getPassword();
-        senhas.setTitle(new_title);
-        senhas.setUsername(new_username);
-        senhas.setPassword(new_password);
+        if (new_title.isEmpty()) new_title = senha.getTitle();
+        if (new_username.isEmpty()) new_username = senha.getUsername();
+        if (new_password.isEmpty()) new_password = senha.getPassword();
+        senha.setTitle(new_title);
+        senha.setUsername(new_username);
+        senha.setPassword(new_password);
     }
 
+    public static void remover(List<Password> senhas, int id) {
+        senhas.remove(id);
+        System.out.println("Senha removida com sucesso!");
+    }
     public static void remover(List<Password> senhas) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Seleciona o id: ");
-        int id = input.nextInt();
+        int id = buscarPorId(senhas);
+        if (id < 0) {
+            System.out.println("Id INVALID");
+            return;
+        }
         senhas.remove(id);
         System.out.println("Senha removida com sucesso!");
     }
