@@ -14,13 +14,17 @@ public class App {
 //        int count = 0;
         int option = 0;
 //        /*
-        //so para gerar ja algumas senhas//////////////////////////////////////////////
+//        so para gerar ja algumas senhas//////////////////////////////////////////////
         for (int i = 0; i < 5; i++) {
             Password actual = new Password(i, "senha"+i,"user"+i,"pass");
             senhas.add(actual);
         }
+
 //        */
         do {
+//     ⚠⚠⚠⚠⚠⚠️       remover depois
+            for (Password senha : senhas)
+                System.out.println(senha.toString());
             menu();
             option = input.nextInt();
             switch (option) {
@@ -76,7 +80,7 @@ public class App {
     public static int buscarPorId(List<Password> senhas) {
         Scanner input = new Scanner(System.in);
         int id;
-//        if (senhas.isEmpty()) System.out.println("Nenhuma password registrada.");
+//        if (senhas.isEmpty()) { System.out.println("Nenhuma password registrada."); return -1;}
         System.out.print("Seleciona o id: ");
         id = input.nextInt();
 //        if (id >= 0 && id <= senhas.size() - 1) return id;
@@ -84,6 +88,11 @@ public class App {
             if (id == senha.getId())
                 return id;
         }
+//        if (id >= 0 && id <= senhas.size() - 1) {
+//            for (Password senha : senhas) {
+//                if (id == senha.getId())
+//                    id = senhas.indexOf(senha); // o id recebe a posicao
+//            }
         return -1;
     }
 // ⚠⚠⚠⚠⚠⚠️ vai gerar as senha simplismente, e a senha serah colocada na lista no main,
@@ -142,6 +151,12 @@ public class App {
         int op = 0;
         // exibe detalhes da password se id for valido
         if (id >= 0 && id <= senhas.size() - 1) {
+//            ?? como o id pode ser diferente do indice do objecto no array,
+//                entao ele percorre os objectos para encontrar o id
+            for (Password senha : senhas) {
+                if (id == senha.getId())
+                    id = senhas.indexOf(senha);
+            }
             formato.format(senhas.get(id).getTitle(),"#");
             System.out.println("Username: " +senhas.get(id).getUsername());
             System.out.println("Password: " +senhas.get(id).getPass()); //tera que colocar um PIN para ver a senha completa

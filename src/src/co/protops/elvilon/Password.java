@@ -43,11 +43,15 @@ public class Password {
     // METODOS
     private String hiddenPassword(String password) {
         int qtd = password.length();
-        String pass = password.substring(0,2) +"xxx"+ password.substring(qtd-1,qtd);
-        return pass;
+        return password.substring(0,2) +"xxx"+ password.substring(qtd-1,qtd);
     }
 
-//    public void buscarPorId(int id) {
+    @Override
+    public String toString() {
+        return "{"+this.id+" | "+this.title+" | "+this.username+" | "+this.password+"}";
+    }
+
+    //    public void buscarPorId(int id) {
 //        System.out.println(getId() +". "+ getTitle());
 //    }
 }
