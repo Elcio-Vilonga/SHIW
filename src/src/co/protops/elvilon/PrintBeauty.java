@@ -15,4 +15,10 @@ public class PrintBeauty {
             System.out.print(theObject);
         }
     }
+
+
+//    ??metodo para criar tabela de senhas
+
+
+
 }

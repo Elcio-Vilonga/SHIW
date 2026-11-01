@@ -1,11 +1,8 @@
 package co.protops.elvilon;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Collections;
 
 public class App {
     public static void main(String[] args) {
@@ -70,6 +67,7 @@ public class App {
         } while (option != 0);
     }
 
+//    ??calma ai, vou te mexer mais tarde
     public static boolean validarId(List<Password> senhas, int id) {
 //        eh possivel o id ser maior que a lista, no caso,
 //        o ultimo id serah sempre maior caso se eliminem outros
@@ -131,13 +129,14 @@ public class App {
         password = input.nextLine();
 
 //        Password pass = new Password(id, title, username,password);
-        Password senha = new Password(title, username,password);
+//        Password senha = new Password(title, username,password);
 //        senha.(pass);
 //        int id = senhas.size()-1; //para evitar pegar o -1, o id eh implementado depois da incercao
 //        senhas.get(id).setId(id); //id sera == a posicao
 //        System.out.println("Password registrada com sucesso!");
 //        count++;
-        return senha;
+//        return senha;
+        return new Password(title, username,password);
     }
 
     public static void listar(List<Password> senhas) {
@@ -211,15 +210,27 @@ public class App {
     }
 
     public static void remover(List<Password> senhas, int id) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Deseja realmente remover " +senhas.get(id).getTitle()+ "?");
+        System.out.println("1 - Sim\t2 - Não\n$>: ");
+        int op = input.nextInt();
+        if (op == 2)
+            return;
         senhas.remove(id);
         System.out.println("Senha removida com sucesso!");
     }
     public static void remover(List<Password> senhas) {
+        Scanner input = new Scanner(System.in);
         int id = buscarPorId(senhas);
         if (id < 0) {
             System.out.println("Id INVALID");
             return;
         }
+        System.out.println("Deseja realmente remover " +senhas.get(id).getTitle()+ "?");
+        System.out.println("1 - Sim\t2 - Não\n$>: ");
+        int op = input.nextInt();
+        if (op == 2)
+            return;
         senhas.remove(id);
         System.out.println("Senha removida com sucesso!");
     }

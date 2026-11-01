@@ -38,7 +38,7 @@ PasswordManager.java
 
 CHECKLIST
 
-- [ ] Criar Password.java.
+- [✔️ ] Criar Password.java.
 - [ ] Criar PasswordManager.java.
 - [ ] Mover a lista para PasswordManager.
 - [ ] Criar método registrar().
