@@ -17,7 +17,7 @@ public class PasswordManager {
 
         int id;
         for (int i = 0; i < 5; i++) {
-            Password actual = new Password(i, "senha"+i,"user"+i,"pass");
+            Password actual = new Password("senha"+i,"user"+i,"pass");
             senhas.add(actual);
         }
     }
@@ -33,7 +33,8 @@ public class PasswordManager {
 //    }
 
     public static int geradorId(List<Password> senhas) {
-        return senhas.getLast().getId() + 1;
+//        return senhas.getLast().getId() + 1;
+        return senhas.getLast().getId();
     }
 
     //    ??este metodo deveria ser buscarId()

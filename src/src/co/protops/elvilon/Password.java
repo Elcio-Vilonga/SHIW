@@ -1,25 +1,21 @@
 package co.protops.elvilon;
 
 public class Password {
+
+    private static int proximo_id = 0;
     // ATRIBUTOS
-    private int id;
+    private final int id;
     private String title;
     private String username;
     private String password;
     public String obs;
 
     // CONSTRUTORES
-    public Password() { }
-    public Password(String title, String username, String password) {
-        setTitle(title);
-        setUsername(username);
-//        this.password = password;
-        setPassword(password);
+    public Password() {
+        this.id = proximo_id++;
     }
-
-    public Password(int id, String title, String username, String password) {
-//        this.id = id;
-        setId(id);
+    public Password(String title, String username, String password) {
+        this.id = proximo_id++;
         setTitle(title);
         setUsername(username);
 //        this.password = password;
@@ -28,7 +24,7 @@ public class Password {
 
 
     // SETTERS
-    public void setId(int id) { this.id = id; }
+//    public void setId(int id) { this.id = id; }
     public void setTitle(String title) { this.title = title.toUpperCase(); }
     public void setUsername(String username) { this.username = username; }
     public void setPassword(String password) { this.password = password; }

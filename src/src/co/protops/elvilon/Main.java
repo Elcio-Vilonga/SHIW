@@ -11,10 +11,11 @@ public class Main {
         List<Password> senhas = new ArrayList<>();
         int id = 0;
         int option = 0;
+
 //        /*
 //        so para gerar ja algumas senhas//////////////////////////////////////////////
         for (int i = 0; i < 5; i++) {
-            Password actual = new Password(i, "senha"+i,"user"+i,"pass");
+            Password actual = new Password("senha"+i,"user"+i,"pass");
             senhas.add(actual);
         }
 //        */
@@ -35,8 +36,8 @@ public class Main {
 //                    int last_item = senhas.size() - 1;
 //                    int last_item = senhas.getLast().getId() + 1;
 
-                    int last_item = PasswordManager.geradorId(senhas);
-                    senhas.get(last_item).setId(last_item); // incrementa um id na senha criada
+//                    int last_item = PasswordManager.geradorId(senhas);
+//                    senhas.get(last_item).setId(last_item); // incrementa um id na senha criada
                     System.out.println("Password registrada com sucesso!");
                     break;
                 case 2:
@@ -57,7 +58,7 @@ public class Main {
                 case 5:
                     System.out.println("= 5 -   Remover      =");
                     PasswordManager.remover(senhas);
-                    System.out.println("Senha removida com sucesso!");
+//                    System.out.println("Senha removida com sucesso!");
                     break;
                 case 0: System.out.println("Encerrando o programa..."); break;
                 default: System.out.println("INVALID OPTION...\n\tTry again.");
