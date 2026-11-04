@@ -1,14 +1,11 @@
 package co.protops.elvilon;
 
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         PrintBeauty formato = new PrintBeauty();
-        List<Password> senhas = new ArrayList<>();
         int id = 0;
         int option = 0;
 
@@ -16,49 +13,42 @@ public class Main {
 //        so para gerar ja algumas senhas//////////////////////////////////////////////
         for (int i = 0; i < 5; i++) {
             Password actual = new Password("senha"+i,"user"+i,"pass");
-            senhas.add(actual);
+//            senhas.add(actual);
+            PasswordManager.senhas.add(actual);
         }
 //        */
+        Password senha = new Password("telegram", "@rolotovski", "1234567");
+        PasswordManager.senhas.add(senha);
+        formato.mostraTabela(PasswordManager.senhas, '=');
 
         do {
-//     ⚠⚠⚠⚠⚠⚠️       remover depois
-            for (Password senha : senhas)
-                System.out.println(senha.toString());
             menu();
-//            System.out.println(PasswordManager.geradorId(senhas));
-
             option = input.nextInt();
             switch (option) {
                 case 1:
                     System.out.println("= 1 -   Registrar    =");
-                    senhas.add(PasswordManager.registrar());
-//                    ??melhorar essa parte: se apgr um objt e criar um nv, os 2 ultm terao o msm id
-//                    int last_item = senhas.size() - 1;
-//                    int last_item = senhas.getLast().getId() + 1;
-
-//                    int last_item = PasswordManager.geradorId(senhas);
-//                    senhas.get(last_item).setId(last_item); // incrementa um id na senha criada
+                    PasswordManager.senhas.add(PasswordManager.registrar());
                     System.out.println("Password registrada com sucesso!");
                     break;
                 case 2:
                     System.out.println("= 2 -   Listar       =");
-                    PasswordManager.listar(senhas);
+                    formato.mostraTabela(PasswordManager.senhas, '=');
+//                    PasswordManager.listar(PasswordManager.senhas);
                     break;
                 case 3:
                     System.out.println("= 3 -   Abrir        =");
-                    id = PasswordManager.buscarId(senhas);
-                    PasswordManager.abrir(senhas, id);
+                    id = PasswordManager.buscarId(PasswordManager.senhas);
+                    PasswordManager.abrir(PasswordManager.senhas, id);
                     break;
                 case 4:
                     System.out.println("========== EDITAR ==========");
-                    id = PasswordManager.buscarId(senhas);
-                    PasswordManager.editar(senhas.get(id));
+                    id = PasswordManager.buscarId(PasswordManager.senhas);
+                    PasswordManager.editar(PasswordManager.senhas.get(id));
                     System.out.println("Senha editada com sucesso!");
                     break;
                 case 5:
                     System.out.println("= 5 -   Remover      =");
-                    PasswordManager.remover(senhas);
-//                    System.out.println("Senha removida com sucesso!");
+                    PasswordManager.remover(PasswordManager.senhas);
                     break;
                 case 0: System.out.println("Encerrando o programa..."); break;
                 default: System.out.println("INVALID OPTION...\n\tTry again.");

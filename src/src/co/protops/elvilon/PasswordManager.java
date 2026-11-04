@@ -5,39 +5,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class PasswordManager {
-//    private List<Password> senhas = new ArrayList<>();
+    public static List<Password> senhas = new ArrayList<>();
 
 //    public void addSenha(Password senha) {
 //        senhas.add(senha);
 //    }
 
-    static void main() {
-        Scanner input = new Scanner(System.in);
-        List<Password> senhas = new ArrayList<>();
 
-        int id;
-        for (int i = 0; i < 5; i++) {
-            Password actual = new Password("senha"+i,"user"+i,"pass");
-            senhas.add(actual);
-        }
-    }
-
-//    //    ??calma ai, vou te mexer mais tarde
-//    public static boolean validarId(List<Password> senhas, int id) {
-////        eh possivel o id ser maior que a lista, no caso,
-////        o ultimo id serah sempre maior caso se eliminem outros
-////        if (id >= 0 && id <= senhas.size() - 1) return true;
-//        if (senhas.isEmpty()) return false;
-//
-//        return false;
-//    }
-
-    public static int geradorId(List<Password> senhas) {
-//        return senhas.getLast().getId() + 1;
-        return senhas.getLast().getId();
-    }
-
-    //    ??este metodo deveria ser buscarId()
+      //    ??este metodo deveria ser buscarId()
     public static int buscarId(List<Password> senhas, int id) {
         if (senhas.isEmpty()) { System.out.println("Nenhuma password registrada."); return -1;}
 
@@ -66,7 +41,6 @@ public class PasswordManager {
 // o id recebe lah mesmo (no main)
     public static Password registrar() {
         Scanner input = new Scanner(System.in);
-//                    int id = count;
         String title;
         String username;
         String password;
@@ -112,7 +86,7 @@ public class PasswordManager {
 
         if (id >= 0) {
             // exibe detalhes da password se id for valido
-            formato.format(senhas.get(id).getTitle(),"#");
+            formato.format(senhas.get(id).getTitle(), '#');
             System.out.println("Username: " +senhas.get(id).getUsername());
             System.out.println("Password: " +senhas.get(id).getPass()); //tera que colocar um PIN para ver a senha completa
             Main.submenu();
