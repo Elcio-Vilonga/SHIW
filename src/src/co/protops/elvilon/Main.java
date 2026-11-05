@@ -33,7 +33,6 @@ public class Main {
                 case 2:
                     System.out.println("= 2 -   Listar       =");
                     formato.mostraTabela(PasswordManager.senhas, '=');
-//                    PasswordManager.listar(PasswordManager.senhas);
                     break;
                 case 3:
                     System.out.println("= 3 -   Abrir        =");
@@ -54,6 +53,7 @@ public class Main {
                 default: System.out.println("INVALID OPTION...\n\tTry again.");
             }
         } while (option != 0);
+        PasswordManager.listar(PasswordManager.senhas);
     }
 
 
