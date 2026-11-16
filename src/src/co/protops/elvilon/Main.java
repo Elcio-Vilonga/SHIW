@@ -9,18 +9,6 @@ public class Main {
         int id = 0;
         int option = 0;
 
-//        /*
-//        so para gerar ja algumas senhas//////////////////////////////////////////////
-        for (int i = 0; i < 5; i++) {
-            Password actual = new Password("senha"+i,"user"+i,"pass");
-//            senhas.add(actual);
-            PasswordManager.senhas.add(actual);
-        }
-//        */
-        Password senha = new Password("telegram", "@rolotovski", "1234567");
-        PasswordManager.senhas.add(senha);
-        formato.mostraTabela(PasswordManager.senhas, '=');
-
         do {
             menu();
             option = input.nextInt();
@@ -32,7 +20,8 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("= 2 -   Listar       =");
-                    formato.mostraTabela(PasswordManager.senhas, '=');
+                    PasswordManager.listar(PasswordManager.senhas);
+//                    formato.mostraTabela(PasswordManager.senhas, '=');
                     break;
                 case 3:
                     System.out.println("= 3 -   Abrir        =");
@@ -53,7 +42,7 @@ public class Main {
                 default: System.out.println("INVALID OPTION...\n\tTry again.");
             }
         } while (option != 0);
-        PasswordManager.listar(PasswordManager.senhas);
+        formato.mostraTabela(PasswordManager.senhas, '=');
     }
 
 

@@ -7,12 +7,8 @@ import java.util.Scanner;
 public class PasswordManager {
     public static List<Password> senhas = new ArrayList<>();
 
-//    public void addSenha(Password senha) {
-//        senhas.add(senha);
-//    }
 
-
-      //    ??este metodo deveria ser buscarId()
+         /* ??este metodo deveria ser buscarId()*/
     public static int buscarId(List<Password> senhas, int id) {
         if (senhas.isEmpty()) { System.out.println("Nenhuma password registrada."); return -1;}
 

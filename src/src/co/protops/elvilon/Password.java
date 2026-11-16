@@ -11,14 +11,17 @@ public class Password {
     public String obs;
 
     // CONSTRUTORES
-    public Password() {
-        this.id = proximo_id++;
+    public Password() { this.id = proximo_id++;}
+    public Password(int id, String title, String username, String password) {
+        this.id = id;
+        setTitle(title);
+        setUsername(username);
+        setPassword(password);
     }
     public Password(String title, String username, String password) {
         this.id = proximo_id++;
         setTitle(title);
         setUsername(username);
-//        this.password = password;
         setPassword(password);
     }
 
@@ -44,7 +47,8 @@ public class Password {
 
     @Override
     public String toString() {
-        return "{"+this.id+" | "+this.title+" | "+this.username+" | "+this.password+"}";
+//        return "{"+this.id+" | "+this.title+" | "+this.username+" | "+this.password+"}";
+        return this.id+";"+this.title+";"+this.username+";"+this.password;
     }
 
     //    public void buscarPorId(int id) {
