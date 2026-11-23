@@ -4,10 +4,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        PasswordStorage armazenamento = new PasswordStorage();
         Scanner input = new Scanner(System.in);
         PrintBeauty formato = new PrintBeauty();
+        String caminho = "C:\\Users\\Pc\\Desktop\\SHIW\\src\\shiw.elcv";
+//        armazenamento.setCaminho("C:\\Users\\Pc\\Desktop\\SHIW\\src\\shiw.elcv");
         int id = 0;
         int option = 0;
+        //inicializa a lista
+        armazenamento.load(PasswordManager.senhas, caminho);
+        //backup
+        armazenamento.save(PasswordManager.senhas, "C:\\Users\\Pc\\Desktop\\SHIW\\src\\backup_shiw.elcv");
 
         do {
             menu();
@@ -43,6 +50,7 @@ public class Main {
             }
         } while (option != 0);
         formato.mostraTabela(PasswordManager.senhas, '=');
+        armazenamento.save(PasswordManager.senhas, caminho);
     }
 
 
