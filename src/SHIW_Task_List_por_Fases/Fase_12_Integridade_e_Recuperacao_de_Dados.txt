@@ -1,0 +1,27 @@
+SHIW — FASE 12: INTEGRIDADE E RECUPERAÇÃO DE DADOS
+
+OBJECTIVO
+Garantir que os dados são carregados correctamente e que os identificadores não entram em conflito.
+
+TAREFAS
+[✔️ ] Rever o contador estático de IDs em Password.
+[✔️ ] Garantir que carregar um ID actualiza o próximo ID disponível.
+[️ ] Testar o carregamento de registos com IDs não consecutivos.
+[ ] Impedir a criação de IDs duplicados.
+[ ] Verificar se cada linha contém o número esperado de campos.
+[ ] Tratar linhas vazias ou malformadas sem terminar inesperadamente o programa.
+[ ] Definir como lidar com campos que contenham o delimitador escolhido.
+[ ] Tratar ficheiro inexistente como uma primeira execução normal.
+[ ] Tratar ficheiro vazio correctamente.
+[ ] Evitar duplicar registos na lista quando load() é chamado mais de uma vez.
+[ ] Decidir como o programa deve reagir quando o ficheiro não puder ser lido.
+
+CRITÉRIOS DE CONCLUSÃO
+- Carregar IDs 0, 3 e 8 e confirmar que o próximo registo recebe um ID superior a 8.
+- Testar um ficheiro vazio.
+- Testar uma linha incompleta.
+- Testar um ficheiro inexistente.
+- Confirmar que uma chamada repetida a load() não duplica os registos.
+
+NOTA
+Não assumir que os dados do ficheiro são sempre válidos. Um ficheiro pode estar incompleto, alterado ou corrompido.

@@ -24,7 +24,6 @@ public class PasswordStorage {
                 String[] dados = linha.split(";");
                 Password senha = new Password(Integer.parseInt(dados[0]), dados[1], dados[2], dados[3]);
                 lista.add(senha);
-//                PasswordManager.senhas.add(senha);
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());

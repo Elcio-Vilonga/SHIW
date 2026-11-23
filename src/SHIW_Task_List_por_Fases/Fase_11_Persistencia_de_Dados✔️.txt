@@ -1,0 +1,36 @@
+SHIW — FASE 11: PERSISTÊNCIA DE DADOS
+
+OBJECTIVO
+Fazer com que os registos do SHIW continuem disponíveis depois de fechar e voltar a abrir o programa.
+
+CONHECIMENTOS APLICADOS
+- FileWriter e BufferedWriter
+- FileReader e BufferedReader
+- try-with-resources
+- List e ArrayList
+- String.split()
+- Conversão de String para tipos primitivos
+
+TAREFAS
+[✔️ ] Criar a classe PasswordStorage.java.
+[✔️ ] Definir um caminho único para o ficheiro de dados.
+[✔️ ] Implementar save(List<Password> senhas, String caminho).
+[✔️ ] Converter cada objecto Password numa linha de texto.
+[✔️ ] Gravar cada registo no ficheiro, usando um delimitador consistente.
+[✔️ ] Implementar load(List<Password> senhas, String caminho).
+[✔️ ] Ler o ficheiro linha por linha.
+[✔️ ] Separar os campos de cada linha.
+[✔️ ] Converter o ID de String para int.
+[✔️ ] Criar um objecto Password com os dados recuperados.
+[✔️ ] Adicionar os objectos recuperados à lista.
+[✔️ ] Integrar load() no arranque do programa.
+[✔️ ] Integrar save() quando os dados forem alterados ou no encerramento.
+
+CRITÉRIOS DE CONCLUSÃO
+- Registar uma senha, fechar o SHIW e voltar a abri-lo.
+- Confirmar que a senha continua na lista.
+- Editar e remover um registo e confirmar que a alteração persiste.
+- Confirmar que o ficheiro é criado automaticamente quando ainda não existe.
+
+NOTAS
+Nesta fase, o ficheiro poderá conter dados em texto simples. Utilizar apenas dados fictícios para testes. Não guardar credenciais reais.

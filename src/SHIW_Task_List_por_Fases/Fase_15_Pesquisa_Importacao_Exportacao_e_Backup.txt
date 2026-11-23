@@ -1,0 +1,32 @@
+SHIW — FASE 15: PESQUISA, IMPORTAÇÃO, EXPORTAÇÃO E BACKUP
+
+OBJECTIVO
+Facilitar a gestão dos registos e permitir cópias de segurança e transferência controlada de dados.
+
+TAREFAS — PESQUISA
+[ ] Criar um método para pesquisar por nome da plataforma.
+[ ] Permitir pesquisa por username.
+[ ] Definir se a pesquisa ignora maiúsculas e minúsculas.
+[ ] Apresentar uma mensagem quando não existirem resultados.
+
+TAREFAS — EXPORTAÇÃO E IMPORTAÇÃO
+[ ] Definir um formato de exportação documentado.
+[ ] Implementar exportação dos registos.
+[ ] Implementar importação com validação dos campos.
+[ ] Verificar conflitos de IDs durante a importação.
+[ ] Evitar substituir dados existentes sem confirmação.
+[ ] Definir como proteger ficheiros exportados.
+
+TAREFAS — BACKUP
+[ ] Criar uma opção para gerar uma cópia de segurança.
+[ ] Definir um nome de ficheiro que evite sobrescrever backups anteriores.
+[ ] Permitir recuperar uma cópia de segurança.
+[ ] Validar a cópia antes de substituir os dados actuais.
+[ ] Documentar os limites e cuidados do processo.
+
+CRITÉRIOS DE CONCLUSÃO
+- Pesquisar e encontrar registos por plataforma.
+- Exportar e importar dados de teste sem perdas.
+- Criar uma cópia de segurança e restaurá-la.
+- Tratar ficheiros inválidos e conflitos de IDs.
+- Garantir que os ficheiros exportados e backups são protegidos quando contêm credenciais.

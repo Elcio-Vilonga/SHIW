@@ -1,0 +1,23 @@
+SHIW — FASE 13: VALIDAÇÃO E TRATAMENTO DE ERROS
+
+OBJECTIVO
+Tornar a utilização do SHIW mais previsível, evitando que entradas inválidas interrompam o programa.
+
+TAREFAS
+[ ] Rever todos os pontos onde o utilizador introduz números.
+[ ] Tratar entradas não numéricas antes de converter para int.
+[ ] Validar IDs antes de aceder à lista.
+[ ] Corrigir o fluxo de navegação quando uma senha não é encontrada.
+[ ] Rever a utilização de Scanner e evitar conflitos entre nextInt(), next() e nextLine().
+[ ] Definir o comportamento para campos obrigatórios vazios.
+[ ] Permitir que campos opcionais mantenham os valores anteriores durante a edição.
+[ ] Rever as mensagens de erro para que sejam claras.
+[ ] Tratar IOException nas operações de ficheiros.
+[ ] Evitar capturar excepções sem explicar ou resolver o problema.
+
+CRITÉRIOS DE CONCLUSÃO
+- Introduzir letras quando o programa espera um número.
+- Introduzir um ID inexistente.
+- Tentar editar ou remover sem seleccionar um registo válido.
+- Deixar campos vazios durante uma edição.
+- Confirmar que o programa continua utilizável depois de cada entrada inválida.

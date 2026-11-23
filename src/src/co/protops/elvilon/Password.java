@@ -2,7 +2,7 @@ package co.protops.elvilon;
 
 public class Password {
 
-    private static int proximo_id = 0;
+    public static int proximo_id = 0;
     // ATRIBUTOS
     private final int id;
     private String title;
@@ -14,6 +14,7 @@ public class Password {
     public Password() { this.id = proximo_id++;}
     public Password(int id, String title, String username, String password) {
         this.id = id;
+        proximo_id++;
         setTitle(title);
         setUsername(username);
         setPassword(password);

@@ -1,0 +1,38 @@
+SHIW — FASE 16: TESTES, REFATORAÇÃO E DOCUMENTAÇÃO
+
+OBJECTIVO
+Melhorar a fiabilidade, a organização e a facilidade de utilização e manutenção do SHIW.
+
+TAREFAS — TESTES
+[ ] Criar testes para registar uma senha.
+[ ] Criar testes para listar e procurar registos.
+[ ] Criar testes para editar e remover registos.
+[ ] Criar testes para guardar e carregar dados.
+[ ] Testar ficheiro inexistente, vazio e com conteúdo inválido.
+[ ] Testar IDs repetidos e IDs não consecutivos.
+[ ] Testar falhas de autenticação e de leitura dos dados protegidos.
+[ ] Testar importação, exportação e recuperação de backup.
+
+TAREFAS — ORGANIZAÇÃO DO CÓDIGO
+[ ] Rever a responsabilidade de cada classe.
+[ ] Manter a lógica de armazenamento separada da lógica dos menus.
+[ ] Evitar duplicação de código.
+[ ] Rever nomes de classes, métodos e variáveis.
+[ ] Remover código de teste temporário.
+[ ] Rever comentários e eliminar comentários desactualizados.
+[ ] Considerar testes automatizados com JUnit.
+
+TAREFAS — DOCUMENTAÇÃO
+[ ] Actualizar o README.md.
+[ ] Documentar os requisitos para executar o projecto.
+[ ] Explicar como compilar e executar o SHIW.
+[ ] Documentar o formato e a localização dos dados.
+[ ] Explicar as funcionalidades implementadas.
+[ ] Identificar claramente limitações conhecidas.
+[ ] Incluir avisos de segurança e instruções de backup.
+
+CRITÉRIOS DE CONCLUSÃO
+- As principais operações têm testes.
+- O projecto pode ser executado seguindo o README.
+- A estrutura do código é compreensível.
+- A documentação corresponde ao estado real da aplicação.

@@ -1,0 +1,30 @@
+SHIW — FASE 14: SEGURANÇA E AUTENTICAÇÃO
+
+OBJECTIVO
+Proteger o acesso às credenciais guardadas pelo SHIW.
+
+IMPORTANTE
+Esta fase deve começar apenas depois de a persistência estar estável. Não implementar algoritmos criptográficos próprios. Utilizar bibliotecas e mecanismos criptográficos reconhecidos.
+
+TAREFAS
+[ ] Estudar a diferença entre autenticação, hashing e criptografia.
+[ ] Definir como o utilizador será autenticado.
+[ ] Implementar uma forma segura de verificar a senha principal.
+[ ] Não guardar a senha principal em texto simples.
+[ ] Estudar funções de derivação de chaves próprias para palavras-passe, como Argon2id, scrypt ou PBKDF2.
+[ ] Escolher uma biblioteca criptográfica mantida e adequada ao projecto.
+[ ] Implementar criptografia autenticada para proteger o ficheiro de dados, por exemplo AES-GCM.
+[ ] Guardar o salt e o nonce/IV necessários junto dos dados, sem os reutilizar indevidamente.
+[ ] Definir uma estratégia segura para a chave de criptografia.
+[ ] Tratar falhas de autenticação e dados que não possam ser desencriptados.
+[ ] Evitar mostrar a senha completa sem uma acção explícita do utilizador.
+[ ] Rever mensagens, logs e cópias de segurança para não expor credenciais.
+
+CRITÉRIOS DE CONCLUSÃO
+- O acesso aos registos exige autenticação.
+- O ficheiro armazenado não revela directamente as credenciais.
+- Uma alteração indevida nos dados protegidos é detectada.
+- Uma senha principal incorrecta não permite abrir a base de dados.
+
+AVISO
+A criptografia não resolve, por si só, todos os riscos. A gestão da chave, a recuperação de acesso e a protecção de cópias de segurança também são essenciais. Não utilizar o SHIW para credenciais reais até existir uma solução de segurança revista e testada.
